@@ -7,14 +7,14 @@ do {
 } while (nombre == "" || dni == "");
 
 //MOSTRAR DATOS INGRESADOS POR EL PACIENTE
-let nombreYdni = nombre + " " + dni;
+const nombreYdni = `${nombre} ${dni}`;
 let precioConsulta = 2500;
 alert("Su nombre es: " + nombreYdni + " " + "A continuación se le asignará su turno. El costo es de" + " " + "$" + precioConsulta);
 
 //ASIGNAR NUMERO DE TURNO
 for (let i = 1; i <= 20; i++) {
     let diaDeTurno = prompt("Teniendo en cuenta que se asignan turnos de Lunes a Viernes, escoja el día que desea su turno");
-    if (diaDeTurno == "") {
+    if (diaDeTurno === "") {
         break;
     }
     alert("Su turno fue registrado para el día" + " " + diaDeTurno + " " + "a las 18:15." + " " + "Su numero de turno es:" + i);
@@ -23,13 +23,15 @@ for (let i = 1; i <= 20; i++) {
         case 1:
             precioConsulta = precioConsulta;
             alert("El costo final de su consulta  sin descuento es de" + " " + "$" + precioConsulta);
+            break;
         case 2:
             precioConsulta = precioConsulta * 0.3;
             alert("El costo final de su consulta con descuento es de" + " " + "$" + precioConsulta);
-
+            break;
         case 3:
             precioConsulta = precioConsulta * 0.5;
             alert("El costo final de su consulta con descuento es de" + " " + "$" + precioConsulta);
+            break;
         default:
             alert("Usted ingresó una opción inexistente");
             break;
