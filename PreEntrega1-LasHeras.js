@@ -1,6 +1,7 @@
 let nombre;
 let dni;
 let continuar = true;
+
 //PEDIR DATOS HASTA QUE ESTÉN CORRECTOS
 do {
     nombre = prompt("Ingrese un nombre completo para conseguir turno con Catalina Lopez Licenciada en Psicologia");
@@ -13,9 +14,11 @@ let precioConsulta = 2500;
 alert("Su nombre es: " + nombreYdni + " " + "A continuación se le asignará su turno. El costo es de" + " " + "$" + precioConsulta);
 
 //ASIGNAR NUMERO DE TURNO
-for (let i = 1; i <= 20; i++) {
+let i = 1;
+while (i <= 20 && continuar) {
     let diaDeTurno = prompt("Teniendo en cuenta que se asignan turnos de Lunes a Viernes, escoja el día que desea su turno");
     if (diaDeTurno === "") {
+        continuar = false;
         break;
     }
     alert("Su turno fue registrado para el día" + " " + diaDeTurno + " " + "a las 18:15." + " " + "Su numero de turno es:" + i);
