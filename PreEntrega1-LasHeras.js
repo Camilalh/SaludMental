@@ -1,5 +1,6 @@
 let nombre;
 let dni;
+let continuar = true;
 //PEDIR DATOS HASTA QUE ESTÉN CORRECTOS
 do {
     nombre = prompt("Ingrese un nombre completo para conseguir turno con Catalina Lopez Licenciada en Psicologia");
@@ -36,7 +37,10 @@ for (let i = 1; i <= 20; i++) {
             alert("Usted ingresó una opción inexistente");
             break;
     }
-    if (i == 20) {
-        alert("Se han terminado los 20 turnos disponibles de esta semana. Intente nuevamente la semana próxima.");
-    }
+    i++;
+}
+if (!continuar) {
+    alert("Ha ingresado un día vacío. Se ha interrumpido el proceso de asignación de turnos.");
+} else {
+    alert("Se han terminado los 20 turnos disponibles de esta semana. Intente nuevamente la semana próxima.");
 }
