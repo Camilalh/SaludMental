@@ -1,6 +1,7 @@
-let nombre;
-let dni;
-let continuar = true;
+function datosAsolicitar() {
+    let nombre;
+    let dni;
+}
 
 //PEDIR DATOS HASTA QUE ESTÉN CORRECTOS
 do {
@@ -15,10 +16,9 @@ alert("Su nombre es: " + nombreYdni + " " + "A continuación se le asignará su 
 
 //ASIGNAR NUMERO DE TURNO
 let i = 1;
-while (i <= 20 && continuar) {
+for (let i = 1; i <= 20; i++) {
     let diaDeTurno = prompt("Teniendo en cuenta que se asignan turnos de Lunes a Viernes, escoja el día que desea su turno");
     if (diaDeTurno === "") {
-        continuar = false;
         break;
     }
     alert("Su turno fue registrado para el día" + " " + diaDeTurno + " " + "a las 18:15." + " " + "Su numero de turno es:" + i);
@@ -40,10 +40,6 @@ while (i <= 20 && continuar) {
             alert("Usted ingresó una opción inexistente");
             break;
     }
-    i++;
 }
-if (!continuar) {
-    alert("Ha ingresado un día vacío. Se ha interrumpido el proceso de asignación de turnos.");
-} else {
-    alert("Se han terminado los 20 turnos disponibles de esta semana. Intente nuevamente la semana próxima.");
-}
+
+datosAsolicitar();
