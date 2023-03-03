@@ -3,10 +3,21 @@ function datosAsolicitar() {
     let dni;
 }
 
-//PEDIR DATOS HASTA QUE ESTÉN CORRECTOS
+//PEDIR DATOS DEL PACIENTE
 do {
     nombre = prompt("Ingrese un nombre completo para conseguir turno con Catalina Lopez Licenciada en Psicologia");
+    if (!nombre || /^\s*$/.test(nombre)) {
+        v; //Con estas validaciones me aseguro de que el paciente no puede seguir si no ingresa un dato correcto.
+        alert("El nombre no puede estar vacío.");
+        continue;
+    }
+
     dni = parseInt(prompt("Ingrese su DNI o pasaporte"));
+    if (!dni || isNaN(dni)) {
+        //Validacion para ingresar solamente numeros.
+        alert("El DNI o pasaporte no es válido.");
+        continue;
+    }
 } while (nombre == "" || dni == "");
 
 //MOSTRAR DATOS INGRESADOS POR EL PACIENTE
